@@ -11,9 +11,9 @@
     "start-and-test": "run-p start-silent test ",
     "build": "react-scripts build",
     "lint": "esw --watch --clear",
-    "test": "react-scripts test --noStackTrace",
-    "test-all": "react-scripts test --watchAll=false --noStackTrace",
-    "test-related": "react-scripts test --watchAll=false --noStackTrace --findRelatedTests",
+    "test": "react-scripts test --colors --noStackTrace",
+    "test-all": "react-scripts test --colors --watchAll=false --noStackTrace",
+    "test-related": "react-scripts test --colors --watchAll=false --noStackTrace --findRelatedTests",
     "eject": "react-scripts eject"
   },
   "husky": {
