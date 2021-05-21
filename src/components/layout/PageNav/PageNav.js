@@ -1,24 +1,32 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-// import styles from './Homepage.module.scss';
+
+import styles from './PageNav.module.scss';
+
+import Button from '@material-ui/core/Button';
+
+const routs = [
+  { name: 'Home', to: '/' },
+  { name: 'Login', to: '/login' },
+  { name: 'Booking', to: '/tables' },
+  { name: 'Waiter', to: '/waiter' },
+  { name: 'Kitchen', to: '/kitchen' },
+];
 
 const PageNav = () => (
-  <nav>
-    <NavLink exact to={`${process.env.PUBLIC_URL}/`} activeClassName="active">
-      Home
-    </NavLink>
-    <NavLink to={`${process.env.PUBLIC_URL}/login`} activeClassName="active">
-      Login
-    </NavLink>
-    <NavLink to={`${process.env.PUBLIC_URL}/tables`} activeClassName="active">
-      Tables
-    </NavLink>
-    <NavLink to={`${process.env.PUBLIC_URL}/waiter`} activeClassName="active">
-      Waiter
-    </NavLink>
-    <NavLink to={`${process.env.PUBLIC_URL}/kitchen`} activeClassName="active">
-      Kitchen
-    </NavLink>
+  <nav className={styles.component}>
+    {routs.map(route => (
+      <Button
+        component={NavLink}
+        className={styles.link}
+        key={route.name}
+        exact
+        to={`${process.env.PUBLIC_URL}${route.to}`}
+        activeClassName="active"
+      >
+        {route.name}
+      </Button>
+    ))}
   </nav>
 );
 
