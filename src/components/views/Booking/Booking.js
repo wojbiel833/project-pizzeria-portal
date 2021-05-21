@@ -5,11 +5,11 @@ import styles from './Booking.module.scss';
 import Button from '@material-ui/core/Button';
 
 const links = [
-  { name: 'Orders', to: '/booking' },
-  { name: 'New Booking', to: '/booking/new' },
-  { name: 'Your Booking', to: '/booking/:id' },
-  { name: 'New Event', to: '/event/new' },
-  { name: 'Your Event', to: '/event/:id' },
+  { name: 'Orders', to: '/tables' },
+  { name: 'New Booking', to: '/tables/booking/new' },
+  { name: 'Your Booking', to: '/tables/booking/:id' },
+  { name: 'New Event', to: '/tables/event/new' },
+  { name: 'Your Event', to: '/tables/event/:id' },
 ];
 
 const Booking = id => (
