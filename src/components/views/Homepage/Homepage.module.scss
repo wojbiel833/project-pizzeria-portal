@@ -3,3 +3,14 @@
 .component {
   padding: $base-size;
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.head {
+  flex-flow: column wrap;
+  font-family: $krub;
+  font-size: 17px;
+}

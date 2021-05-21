@@ -15,7 +15,7 @@ import { ThemeProvider } from '@material-ui/styles';
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#130f40',
+      main: '#1A237E',
     },
     // secondary: {
     //   main: '#4834d4',
@@ -25,7 +25,7 @@ const theme = createMuiTheme({
 
 function App() {
   return (
-    <BrowserRouter basename={'/panel'}>
+    <BrowserRouter>
       <StylesProvider injectFirst>
         <ThemeProvider theme={theme}>
           <MainLayout>
@@ -62,16 +62,5 @@ function App() {
     </BrowserRouter>
   );
 }
-
-// Przyjmiemy, że zamówienie będzie mogło mieć jeden z następujących statusów:
-
-// new – zamówienie w trakcie składania, jeszcze nie realizujemy,
-// ordered – zamówienie złożone, należy zrealizować,
-// ready – zamówienie przygotowane, należy dostarczyć,
-// in delivery – [tylko z dostawą] zamówienie w trakcie dostawy,
-// delivered – [tylko lokalne] zamówienie zostało dostarczone, ale jeszcze nie opłacone,
-// done – zamówienie zostało dostarczone i opłacone,
-// cancelled – zamówienie anulowane.
-// W przypadku zamówień z dostawą status ordered oznacza zamówienie opłacone, a w przypadku zamówień lokalnych – tylko złożone, ponieważ klient płaci po zjedzeniu. Dlatego status delivered będziemy stosować tylko w lokalu, a zamówienia z dostawą będą przeskakiwać od razu z in delivery na done. Analogicznie, kelner w restauracji nie będzie używał statusu in delivery, tylko zmieni status z ready na delivered
 
 export default App;
