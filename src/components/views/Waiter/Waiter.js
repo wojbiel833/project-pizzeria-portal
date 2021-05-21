@@ -12,9 +12,9 @@ import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 
 const links = [
-  { name: 'Orders', to: '/orders' },
-  { name: 'New Booking', to: '/orders/new' },
-  { name: 'Edit Booking', to: '/orders/:id' },
+  { name: 'Orders', to: '/waiter' },
+  { name: 'New Booking', to: '/waiter/orders/new' },
+  { name: 'Edit Booking', to: '/waiter/orders/:id' },
 ];
 
 const demoContent = [
@@ -58,7 +58,7 @@ const Waiter = id => (
           component={Link}
           className={styles.link}
           key={link.name}
-          to={link.to}
+          to={`${process.env.PUBLIC_URL}${link.to}`}
         >
           {link.name}
         </Button>
