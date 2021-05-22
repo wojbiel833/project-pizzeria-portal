@@ -11,7 +11,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 
-import NewBooking from './NewBooking';
+// import NewBooking from './NewBooking';
 
 const links = [
   { name: 'Orders', to: '/waiter' },
@@ -63,7 +63,6 @@ const Waiter = id => (
           key={link.name}
           to={`${process.env.PUBLIC_URL}${link.to}`}
           variant="outlined"
-          render={() => <NewBooking />}
         >
           {link.name}
         </Button>
