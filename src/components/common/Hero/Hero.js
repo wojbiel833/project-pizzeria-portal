@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Hero.scss';
+import styles from './Hero.module.scss';
 import PropTypes from 'prop-types';
 
 const Hero = ({ titleText, imageSrc }) => (

@@ -2,8 +2,8 @@
 
 .component {
   position: relative;
+  height: 800px;
   width: 1280px;
-  // overflow: hidden;
 }
 
 .title {
@@ -14,16 +14,15 @@
   width: 100%;
   text-align: center;
   font-size: ($base-size * 5);
-  text-transform: uppercase;
-  // color: $color-light;
+  font-family: $kodchasan;
+  color: $almost-white-color;
   transform: translate(-50%, -50%);
 }
 
 .image {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 128px;
-  height: 100%;
-  object-fit: cover;
+  // top: 0;
+  // left: 0;
+  width: inherit;
+  object-fit: contain;
 }

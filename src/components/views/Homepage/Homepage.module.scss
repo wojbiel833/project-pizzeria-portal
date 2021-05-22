@@ -9,8 +9,35 @@
   justify-content: space-between;
 }
 
-.head {
+.text {
   flex-flow: column wrap;
   font-family: $krub;
   font-size: 17px;
+}
+
+.statistics {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: $lighter-color;
+  box-shadow: $base-shadow;
+}
+
+.relative {
+  position: relative;
+  height: 200px;
+}
+
+.text {
+  font-size: 20px;
+  span {
+    text-decoration: underline;
+  }
+  &:last-of-type {
+    margin-left: 43px;
+  }
 }
