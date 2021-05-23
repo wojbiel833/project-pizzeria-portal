@@ -3,9 +3,6 @@
 .component {
   padding: $base-size;
 }
-
-.text {
-  font-family: $krub;
-  font-size: ($base-size * 1.5);
-  margin: 20px;
+.tableNr {
+  font-weight: 700;
 }

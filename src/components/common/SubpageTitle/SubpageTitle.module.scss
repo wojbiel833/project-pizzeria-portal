@@ -1,0 +1,19 @@
+@import '../../../styles/settings.scss';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text {
+  flex-flow: column wrap;
+  font-family: $krub;
+  font-size: ($base-size * 1.5);
+  margin: 20px;
+}
+
+@media (max-width: 767px) {
+  .text {
+    font-size: ($base-size * 1.2);
+  }
+}

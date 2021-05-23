@@ -4,17 +4,6 @@
   padding: $base-size;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-}
-
-.text {
-  flex-flow: column wrap;
-  font-family: $krub;
-  font-size: 17px;
-}
-
 .statistics {
   position: absolute;
   top: 50%;

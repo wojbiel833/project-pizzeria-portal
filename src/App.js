@@ -14,7 +14,6 @@ import NewOrders from './components/views/NewOrders/NewOrders';
 import EditOrder from './components/views/EditOrder/EditOrder';
 import Kitchen from './components/views/Kitchen/Kitchen';
 
-import Container from '@material-ui/core/Container';
 import { StylesProvider } from '@material-ui/core/styles';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
