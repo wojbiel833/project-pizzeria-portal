@@ -6,7 +6,7 @@ import ReservationsToday from './../../common/ReservationsToday/ReservationsToda
 import SubpageTitle from '../../common/SubpageTitle/SubpageTitle';
 
 const Homepage = () => (
-  <div>
+  <div className={styles.component}>
     <SubpageTitle title="Reservations for today" subtitle="23.05.2021" />
     <ReservationsToday />
     <div className={styles.relative}>
