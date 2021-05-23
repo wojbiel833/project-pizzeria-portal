@@ -2,4 +2,44 @@
 
 .component {
   padding: $base-size;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.input {
+  margin: 0 0 0 60px;
+}
+
+.link {
+  border: black solid 2px;
+  margin: 30px 20px 30px 40px;
+  box-shadow: $base-shadow;
+
+  &:hover {
+    background-color: #130f40;
+    color: #fff;
+  }
+}
+
+form {
+  margin-bottom: 80px;
+}
+
+@media (max-width: 767px) {
+  .component {
+    flex-flow: column wrap;
+  }
+  .input {
+    margin: 0;
+  }
+  .link {
+    margin: 30px 0 0 0;
+  }
+}
+@media (max-width: 991px) {
+  .input {
+    margin: 0 0 0 10px;
+  }
 }

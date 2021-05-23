@@ -29,15 +29,25 @@
 
 .relative {
   position: relative;
-  height: 200px;
+  height: 180px;
+  margin: 10px 0 20px;
 }
 
 .text {
   font-size: 20px;
+  text-align: center;
   span {
     text-decoration: underline;
   }
-  &:last-of-type {
-    margin-left: 43px;
+}
+
+@media (max-width: 767px) {
+  .statistics {
+    width: 50vw;
+  }
+}
+@media (max-width: 499px) {
+  .statistics {
+    width: 80vw;
   }
 }
