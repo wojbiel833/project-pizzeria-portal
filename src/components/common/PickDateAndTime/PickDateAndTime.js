@@ -34,18 +34,18 @@ const PickDateAndTime = () => {
   return (
     <div className={styles.flex}>
       <form className={classes.container} noValidate>
-        <FormControlLabel className={classes.FormControlLabel} disabled="false">
-          <TextField
-            id="datetime-local"
-            label="Date and time (from, each 30min)"
-            type="datetime-local"
-            defaultValue="2021-05-23T10:30"
-            className={classes.textField}
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
-        </FormControlLabel>
+        {/* <FormControlLabel className={classes.textField}> */}
+        <TextField
+          id="datetime-local"
+          label="Date and time (from, each 30min)"
+          type="datetime-local"
+          defaultValue="2021-05-23T10:30"
+          className={classes.textField}
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
+        {/* </FormControlLabel> */}
       </form>
 
       <form className={classes.container} noValidate>

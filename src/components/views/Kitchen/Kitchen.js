@@ -39,13 +39,13 @@ const useStyles = makeStyles({
   table: {
     minWidth: 700,
   },
-  cell10: {
+  cell1: {
     width: '10%',
   },
-  cell20: {
+  cell2: {
     width: '20%',
   },
-  cell60: {
+  cell3: {
     width: '60%',
   },
 });
