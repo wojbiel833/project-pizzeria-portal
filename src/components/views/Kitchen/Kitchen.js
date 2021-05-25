@@ -39,15 +39,15 @@ const useStyles = makeStyles({
   table: {
     minWidth: 700,
   },
-  // cell10: {
-  //   width: '10%',
-  // },
-  // cell20: {
-  //   width: '20%',
-  // },
-  // cell60: {
-  //   width: '60%',
-  // },
+  cell10: {
+    width: '10%',
+  },
+  cell20: {
+    width: '20%',
+  },
+  cell60: {
+    width: '60%',
+  },
 });
 
 // DATA-------------------------------------------------------------------

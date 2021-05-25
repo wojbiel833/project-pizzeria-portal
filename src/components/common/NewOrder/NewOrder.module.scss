@@ -2,4 +2,21 @@
 
 .component {
   padding: $base-size;
+  max-width: 800px;
+  margin: auto;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price {
+  font-family: $krub;
+  font-size: ($base-size * 2);
+  margin: 30px;
+
+  span {
+    text-decoration: underline;
+  }
 }

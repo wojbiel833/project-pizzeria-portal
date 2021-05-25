@@ -12,31 +12,39 @@ import Buttons from '../Buttons/Buttons';
 const EditOrder = () => {
   return (
     <div className={styles.component}>
-      <div className={styles.input}>
-        <PickReservationType />
+      <div className={styles.flex}>
+        <div>
+          <PickGuestsAmount />
+        </div>
+        <div>
+          <PickTable />
+        </div>
       </div>
-      <div className={styles.input}>
-        <PickMenuType />
+      <div className={styles.flex}>
+        <div>
+          <PickReservationType />
+        </div>
+        <div>
+          <PickMenuType />
+        </div>
       </div>
-      <div className={styles.input}>
+      <div>
         <PickDateAndTime />
       </div>
-      <div className={styles.input}>
-        <PickTable />
-      </div>
-      <div className={styles.input}>
-        <PickGuestsAmount />
-      </div>
-      <div className={styles.input}>
-        <p>
-          Price: <span>xxx</span>
-        </p>
-      </div>
-      <div className={styles.input}>
-        <Buttons name="Edit" to="/tables/booking/:id" />
-      </div>
-      <div className={styles.input}>
-        <Buttons name="Save changes" />
+      <div className={styles.flex}>
+        <div className={styles.price}>
+          <p>
+            Price: <span>205,99$</span>
+          </p>
+        </div>
+        <div className={styles.flex}>
+          <div className={styles.buttons}>
+            <Buttons name="Edit" to="/tables/booking/:id" />
+          </div>
+          <div className={styles.buttons}>
+            <Buttons name="Save changes" />
+          </div>
+        </div>
       </div>
     </div>
   );

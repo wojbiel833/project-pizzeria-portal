@@ -28,11 +28,6 @@ const PickReservationType = () => {
           defaultValue="top"
         >
           <FormControlLabel
-            value="standardReservation"
-            control={<Radio color="primary" />}
-            label="Standard reservation"
-          />
-          <FormControlLabel
             value="disposableEvent"
             control={<Radio color="primary" />}
             label="Disposable event"
@@ -41,6 +36,11 @@ const PickReservationType = () => {
             value="cyclicalEvent"
             control={<Radio color="primary" />}
             label="Cyclical event"
+          />
+          <FormControlLabel
+            value="standardReservation"
+            control={<Radio color="primary" />}
+            label="Standard reservation"
           />
         </RadioGroup>
       </FormControl>

@@ -1,9 +1,9 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
-// import styles from './PickDateAndTime.module.scss';
+import styles from './PickDateAndTime.module.scss';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -15,18 +15,29 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(1),
     width: 200,
   },
+  FormControlLabel: {
+    marginBottom: '10px',
+  },
 }));
 
 const PickDateAndTime = () => {
   const classes = useStyles();
+  const [time, setTime] = useState('11:30');
+
+  const updateTime = event => {
+    const newTime = event.target.value;
+    const [, minutes] = newTime.split(':');
+
+    if (minutes === '00' || minutes === '30') setTime(newTime);
+  };
 
   return (
-    <div>
-      <div>
-        <form className={classes.container} noValidate>
+    <div className={styles.flex}>
+      <form className={classes.container} noValidate>
+        <FormControlLabel className={classes.FormControlLabel} disabled="false">
           <TextField
             id="datetime-local"
-            label="Dare and time (from)"
+            label="Date and time (from, each 30min)"
             type="datetime-local"
             defaultValue="2021-05-23T10:30"
             className={classes.textField}
@@ -34,25 +45,25 @@ const PickDateAndTime = () => {
               shrink: true,
             }}
           />
-        </form>
-      </div>
-      <div>
-        <form className={classes.container} noValidate>
-          <TextField
-            id="time"
-            label="Time (to)"
-            type="time"
-            defaultValue="11:30"
-            className={classes.textField}
-            InputLabelProps={{
-              shrink: true,
-            }}
-            inputProps={{
-              step: 1800, //300 = 5 min
-            }}
-          />
-        </form>
-      </div>
+        </FormControlLabel>
+      </form>
+
+      <form className={classes.container} noValidate>
+        <TextField
+          id="time"
+          label="Time(to, each 30min)"
+          type="time"
+          value={time}
+          onChange={updateTime}
+          className={classes.textField}
+          InputLabelProps={{
+            shrink: true,
+          }}
+          inputProps={{
+            step: 1800,
+          }}
+        />
+      </form>
     </div>
   );
 };
