@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -8,6 +8,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import Checkbox from '@material-ui/core/Checkbox';
 
 import SubpageTitle from '../../common/SubpageTitle/SubpageTitle';
 
@@ -50,20 +51,53 @@ const useStyles = makeStyles({
   },
 });
 
-// DATA-------------------------------------------------------------------
-function createData(tableNr, orderNr, order, done) {
-  return { tableNr, orderNr, order, done };
-}
-
-const rows = [
-  createData('1', '123', 'MEAL DESCRIPTION', 'checkbox'),
-  createData('4', '234', 'MEAL DESCRIPTION', 'checkbox'),
-  createData('5', 'ABC234', 'MEAL DESCRIPTION', 'checkbox'),
-];
-
 // COMPONENT---------------------------------------------------------------
 const Kitchen = () => {
   const classes = useStyles();
+
+  const [checked, setChecked] = useState(true);
+
+  const handleChange = event => {
+    setChecked(event.target.checked);
+  };
+
+  // DATA-------------------------------------------------------------------
+  function createData(tableNr, orderNr, order, done) {
+    return { tableNr, orderNr, order, done };
+  }
+
+  const rows = [
+    createData(
+      '1',
+      '123',
+      'MEAL DESCRIPTION',
+      <Checkbox
+        checked={checked}
+        onChange={handleChange}
+        inputProps={{ 'aria-label': 'primary checkbox' }}
+      />
+    ),
+    createData(
+      '4',
+      '234',
+      'MEAL DESCRIPTION',
+      <Checkbox
+        checked={checked}
+        onChange={handleChange}
+        inputProps={{ 'aria-label': 'primary checkbox' }}
+      />
+    ),
+    createData(
+      '5',
+      'ABC234',
+      'MEAL DESCRIPTION',
+      <Checkbox
+        checked={checked}
+        onChange={handleChange}
+        inputProps={{ 'aria-label': 'primary checkbox' }}
+      />
+    ),
+  ];
 
   return (
     <div className={styles.component}>
@@ -72,14 +106,14 @@ const Kitchen = () => {
         <Table className={classes.table} aria-label="customizedTable">
           <TableHead>
             <TableRow>
-              <StyledTableCell colSpan={1}>Table</StyledTableCell>
-              <StyledTableCell colSpan={1} align="left">
+              <StyledTableCell className={classes.cell1}>Table</StyledTableCell>
+              <StyledTableCell className={classes.cell2} align="left">
                 Order number
               </StyledTableCell>
-              <StyledTableCell colSpan={4} align="left">
+              <StyledTableCell className={classes.cell3} align="left">
                 Order details
               </StyledTableCell>
-              <StyledTableCell colSpan={1} align="left">
+              <StyledTableCell className={classes.cell1} align="center">
                 DONE
               </StyledTableCell>
             </TableRow>
@@ -97,7 +131,7 @@ const Kitchen = () => {
                 </StyledTableCell>
                 <StyledTableCell align="left">{row.orderNr}</StyledTableCell>
                 <StyledTableCell align="left">{row.order}</StyledTableCell>
-                <StyledTableCell align="left">{row.done}</StyledTableCell>
+                <StyledTableCell align="center">{row.done}</StyledTableCell>
                 {/* <StyledTableCell align="left">{row.reserved}</StyledTableCell>
                 <StyledTableCell align="left">{row.reserved}</StyledTableCell> */}
               </StyledTableRow>

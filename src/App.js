@@ -8,9 +8,7 @@ import Booking from './components/views/Booking/Booking';
 import BookTable from './components/views/BookTable/BookTable';
 import EditTable from './components/views/EditTable/EditTable';
 import BookEvent from './components/views/BookEvent/BookEvent';
-import EditEvent from './components/views/EditEvent/EditEvent';
 import Waiter from './components/views/Waiter/Waiter';
-import NewOrders from './components/views/NewOrders/NewOrders';
 import EditOrder from './components/views/EditOrder/EditOrder';
 import Kitchen from './components/views/Kitchen/Kitchen';
 
@@ -68,18 +66,8 @@ const App = () => {
               />
               <Route
                 exact
-                path={process.env.PUBLIC_URL + '/tables/event/:id'}
-                component={EditEvent}
-              />
-              <Route
-                exact
                 path={process.env.PUBLIC_URL + '/waiter'}
                 component={Waiter}
-              />
-              <Route
-                exact
-                path={process.env.PUBLIC_URL + '/waiter/orders/new'}
-                component={NewOrders}
               />
               <Route
                 exact

@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 
 import Button from '@material-ui/core/Button';
 
-import styles from './BookingButtons.module.scss';
+import styles from './WaiterButtons.module.scss';
 
 const links = [
-  { name: 'Orders', to: '/tables' },
-  { name: 'New Booking / Event', to: '/tables/booking/new' },
-  { name: 'Your Booking / Event', to: '/tables/booking/:id' },
+  { name: 'Orders', to: '/waiter' },
+  { name: 'New Booking', to: '/waiter/orders/new' },
+  { name: 'Edit Booking', to: '/waiter/orders/:id' },
 ];
 
-const BookingButtons = id => (
+const WaiterButtons = id => (
   <div className={styles.component}>
     <div className="nav">
       {links.map(link => (
@@ -28,4 +28,4 @@ const BookingButtons = id => (
   </div>
 );
 
-export default BookingButtons;
+export default WaiterButtons;

@@ -10,14 +10,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
+import WaiterButtons from '../../common/WaiterButtons/WaiterButtons';
 
 // import NewBooking from './NewBooking';
-
-const links = [
-  { name: 'Orders', to: '/waiter' },
-  { name: 'New Booking', to: '/waiter/orders/new' },
-  { name: 'Edit Booking', to: '/waiter/orders/:id' },
-];
 
 const demoContent = [
   { id: '1', status: 'free', order: null },
@@ -55,19 +50,7 @@ const renderActions = status => {
 // className={ styles.icon + (value.id === currentValue ? ' ' + styles.iconActive : '') }
 const Waiter = id => (
   <div className={styles.component}>
-    <div className="nav">
-      {links.map(link => (
-        <Button
-          component={Link}
-          className={styles.link}
-          key={link.name}
-          to={`${process.env.PUBLIC_URL}${link.to}`}
-          variant="outlined"
-        >
-          {link.name}
-        </Button>
-      ))}
-    </div>
+    <WaiterButtons />
     <div className="table">
       <Paper className={styles.component}>
         <Table>
