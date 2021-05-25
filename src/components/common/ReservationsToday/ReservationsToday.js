@@ -11,6 +11,7 @@ import Paper from '@material-ui/core/Paper';
 
 import styles from './ReservationsToday.module.scss';
 
+// STYLES-------------------------------------------------------------------
 const StyledTableCell = withStyles(theme => ({
   head: {
     backgroundColor: '#1A237E',
@@ -32,6 +33,14 @@ const StyledTableRow = withStyles(theme => ({
   },
 }))(TableRow);
 
+const useStyles = makeStyles({
+  table: {
+    minWidth: 700,
+  },
+});
+
+// DATA-------------------------------------------------------------------
+
 function createData(name, reserved, free) {
   return { name, reserved, free };
 }
@@ -45,12 +54,7 @@ const rows = [
   createData('6', 'X', ''),
 ];
 
-const useStyles = makeStyles({
-  table: {
-    minWidth: 700,
-  },
-});
-
+// COMPONENT---------------------------------------------------------------
 const ReservationsToday = () => {
   const classes = useStyles();
 

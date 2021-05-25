@@ -1,23 +1,15 @@
 import React from 'react';
 
+import PickMenuType from '../PickMenuType/PickMenuType';
+import PickDateAndTime from '../PickDateAndTime/PickDateAndTime';
+import PickTable from '../PickTable/PickTable';
+import PickGuestsAmount from '../PickGuestsAmount/PickGuestsAmount';
 import PickReservationType from '../PickReservationType/PickReservationType';
 
 import styles from './NewOrder.module.scss';
-import PickMenuType from '../PickMenuType/PickMenuType';
-import PickDateAndTime from '../PickDateAndTime/PickDateAndTime';
-
-// DATEPICKER STYLES ------------------------------------------------------------
+import Buttons from '../Buttons/Buttons';
 
 const EditOrder = () => {
-  // RADIO
-
-  // const [value2, setValue2] = React.useState('alaCarte');
-
-  // const handleChange = event => {
-  //   setValue1(event.target.value);
-  //   setValue2(event.target.value);
-  // };
-
   return (
     <div className={styles.component}>
       <div className={styles.input}>
@@ -29,8 +21,23 @@ const EditOrder = () => {
       <div className={styles.input}>
         <PickDateAndTime />
       </div>
-
-      <div className={styles.input}></div>
+      <div className={styles.input}>
+        <PickTable />
+      </div>
+      <div className={styles.input}>
+        <PickGuestsAmount />
+      </div>
+      <div className={styles.input}>
+        <p>
+          Price: <span>xxx</span>
+        </p>
+      </div>
+      <div className={styles.input}>
+        <Buttons name="Edit" to="/tables/booking/:id" />
+      </div>
+      <div className={styles.input}>
+        <Buttons name="Save changes" />
+      </div>
     </div>
   );
 };

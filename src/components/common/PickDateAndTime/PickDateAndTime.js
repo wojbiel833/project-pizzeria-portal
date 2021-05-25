@@ -40,7 +40,7 @@ const PickDateAndTime = () => {
         <form className={classes.container} noValidate>
           <TextField
             id="time"
-            label="Time(to)"
+            label="Time (to)"
             type="time"
             defaultValue="11:30"
             className={classes.textField}
@@ -48,7 +48,7 @@ const PickDateAndTime = () => {
               shrink: true,
             }}
             inputProps={{
-              step: 300, // 5 min
+              step: 1800, //300 = 5 min
             }}
           />
         </form>
