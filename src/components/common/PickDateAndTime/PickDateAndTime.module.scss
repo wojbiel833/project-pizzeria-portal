@@ -2,9 +2,22 @@
 
 .component {
   padding: $base-size;
+  margin: 10px 0;
 }
 
 .flex {
   display: flex;
   justify-content: space-between;
+}
+
+@media (max-width: 499px) {
+  .flex {
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 20px 0;
+
+    form {
+      margin: 20px 0;
+    }
+  }
 }

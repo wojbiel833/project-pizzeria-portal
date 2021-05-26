@@ -6,8 +6,6 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 
-// import styles from './PickReservationType.module.scss';
-
 const PickReservationType = () => {
   const [value, setValue] = React.useState('standardReservation');
 

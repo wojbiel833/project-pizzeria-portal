@@ -1,7 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
-import styles from './Waiter.module.scss';
 
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -12,7 +9,7 @@ import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import WaiterButtons from '../../common/WaiterButtons/WaiterButtons';
 
-// import NewBooking from './NewBooking';
+import styles from './Waiter.module.scss';
 
 const demoContent = [
   { id: '1', status: 'free', order: null },
@@ -28,30 +25,29 @@ const renderActions = status => {
     case 'free':
       return (
         <>
-          <Button>thinking</Button>
-          <Button>new order</Button>
+          <Button className={styles.link}>thinking</Button>
+          <Button className={styles.link}>new order</Button>
         </>
       );
     case 'thinking':
-      return <Button>new order</Button>;
+      return <Button className={styles.link}>new order</Button>;
     case 'ordered':
-      return <Button>prepared</Button>;
+      return <Button className={styles.link}>prepared</Button>;
     case 'prepared':
-      return <Button>delivered</Button>;
+      return <Button className={styles.link}>delivered</Button>;
     case 'delivered':
-      return <Button>paid</Button>;
+      return <Button className={styles.link}>paid</Button>;
     case 'paid':
-      return <Button>free</Button>;
+      return <Button className={styles.link}>free</Button>;
     default:
       return null;
   }
 };
 
-// className={ styles.icon + (value.id === currentValue ? ' ' + styles.iconActive : '') }
 const Waiter = id => (
   <div className={styles.component}>
     <WaiterButtons />
-    <div className="table">
+    <div className={styles.table}>
       <Paper className={styles.component}>
         <Table>
           <TableHead>
@@ -73,6 +69,7 @@ const Waiter = id => (
                   {row.order && (
                     <Button
                       to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}
+                      className={styles.link}
                     >
                       {row.order}
                     </Button>

@@ -22,10 +22,7 @@ const MainLayout = ({ children }) => (
       titleText="Welcome in our restaurant!"
       imageSrc="https://i.ibb.co/54K5XtY/2194675.jpg"
     />
-    <Container maxWidth="lg">
-      {/* <Toolbar /> */}
-      {children}
-    </Container>
+    <Container maxWidth="lg">{children}</Container>
 
     <Footer />
   </div>

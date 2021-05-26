@@ -1,26 +1,17 @@
 import React from 'react';
 
-import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
 
-// import styles from './PickGuestsAmount.module.scss';
-
-const useStyles = makeStyles({
-  root: {
-    width: 500,
-  },
-});
+import styles from './PickGuestsAmount.module.scss';
 
 function valuetext(value) {
   return value;
 }
 
 const PickGuestsAmount = () => {
-  const classes = useStyles();
-
   return (
-    <div className={classes.root}>
+    <div className={styles.slider}>
       <Typography id="guestsAmount" gutterBottom>
         Guests amount
       </Typography>

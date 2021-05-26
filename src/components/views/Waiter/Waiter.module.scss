@@ -2,15 +2,19 @@
 
 .component {
   padding: $base-size;
+  margin-bottom: 20px;
 }
 
 .link {
   border: black solid 2px;
-  margin: 30px 20px 30px 0;
+  margin: 5px 20px 5px 0;
   box-shadow: $base-shadow;
 
   &:hover {
     background-color: #130f40;
     color: #fff;
   }
+}
+.table {
+  overflow-x: auto;
 }

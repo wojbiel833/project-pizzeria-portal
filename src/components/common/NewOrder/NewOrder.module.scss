@@ -7,6 +7,7 @@
 }
 
 .flex {
+  color: #808080;
   display: flex;
   justify-content: space-between;
 }
@@ -18,5 +19,19 @@
 
   span {
     text-decoration: underline;
+  }
+}
+
+@media (max-width: 767px) {
+  .flex {
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 499px) {
+  .flex {
+    flex-flow: row wrap;
+    justify-content: center;
   }
 }

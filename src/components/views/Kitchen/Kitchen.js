@@ -88,7 +88,37 @@ const Kitchen = () => {
       />
     ),
     createData(
-      '5',
+      'delivery',
+      'ABC245',
+      'MEAL DESCRIPTION',
+      <Checkbox
+        checked={checked}
+        onChange={handleChange}
+        inputProps={{ 'aria-label': 'primary checkbox' }}
+      />
+    ),
+    createData(
+      '3',
+      '567',
+      'MEAL DESCRIPTION',
+      <Checkbox
+        checked={checked}
+        onChange={handleChange}
+        inputProps={{ 'aria-label': 'primary checkbox' }}
+      />
+    ),
+    createData(
+      'delivery',
+      'ABC874',
+      'MEAL DESCRIPTION',
+      <Checkbox
+        checked={checked}
+        onChange={handleChange}
+        inputProps={{ 'aria-label': 'primary checkbox' }}
+      />
+    ),
+    createData(
+      'delivery',
       'ABC234',
       'MEAL DESCRIPTION',
       <Checkbox
@@ -132,8 +162,6 @@ const Kitchen = () => {
                 <StyledTableCell align="left">{row.orderNr}</StyledTableCell>
                 <StyledTableCell align="left">{row.order}</StyledTableCell>
                 <StyledTableCell align="center">{row.done}</StyledTableCell>
-                {/* <StyledTableCell align="left">{row.reserved}</StyledTableCell>
-                <StyledTableCell align="left">{row.reserved}</StyledTableCell> */}
               </StyledTableRow>
             ))}
           </TableBody>

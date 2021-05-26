@@ -114,81 +114,83 @@ const AddBooking = () => {
   ];
 
   return (
-    <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="customized table">
-        <TableHead>
-          <TableRow>
-            <StyledTableCell>Table</StyledTableCell>
-            <StyledTableCell align="center">9:00</StyledTableCell>
-            <StyledTableCell align="center">9:30</StyledTableCell>
-            <StyledTableCell align="center">10:00</StyledTableCell>
-            <StyledTableCell align="center">10:30</StyledTableCell>
-            <StyledTableCell align="center">11:00</StyledTableCell>
-            <StyledTableCell align="center">11:30</StyledTableCell>
-            <StyledTableCell align="center">12:00</StyledTableCell>
-            <StyledTableCell align="center">12:30</StyledTableCell>
-            <StyledTableCell align="center">13:00</StyledTableCell>
-            <StyledTableCell align="center">13:30</StyledTableCell>
-            <StyledTableCell align="center">14:00</StyledTableCell>
-            <StyledTableCell align="center">14:30</StyledTableCell>
-            <StyledTableCell align="center">15:00</StyledTableCell>
-            <StyledTableCell align="center">15:30</StyledTableCell>
-            <StyledTableCell align="center">16:00</StyledTableCell>
-            <StyledTableCell align="center">16:30</StyledTableCell>
-            <StyledTableCell align="center">17:00</StyledTableCell>
-            <StyledTableCell align="center">17:30</StyledTableCell>
-            <StyledTableCell align="center">18:00</StyledTableCell>
-            <StyledTableCell align="center">18:30</StyledTableCell>
-            <StyledTableCell align="center">19:00</StyledTableCell>
-            <StyledTableCell align="center">19:30</StyledTableCell>
-            <StyledTableCell align="center">20:00</StyledTableCell>
-            <StyledTableCell align="center">20:30</StyledTableCell>
-            <StyledTableCell align="center">21:00</StyledTableCell>
-            <StyledTableCell align="center">21:30</StyledTableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map(row => (
-            <StyledTableRow key={row.name}>
-              <StyledTableCell
-                className={styles.tableNr}
-                component="th"
-                scope="row"
-                align="center"
-              >
-                {row.name}
-              </StyledTableCell>
-              <StyledTableCell align="center">{row.reserved}</StyledTableCell>
-              <StyledTableCell align="center">{row.free}</StyledTableCell>
-              <StyledTableCell align="center">{row.reserved}</StyledTableCell>
-              <StyledTableCell align="center">{row.reserved}</StyledTableCell>
-              <StyledTableCell align="center">{row.reserved}</StyledTableCell>
-              <StyledTableCell align="center">{row.reserved}</StyledTableCell>
-              <StyledTableCell align="center">{row.free}</StyledTableCell>
-              <StyledTableCell align="center">{row.reserved}</StyledTableCell>
-              <StyledTableCell align="center">{row.reserved}</StyledTableCell>
-              <StyledTableCell align="center">{row.reserved}</StyledTableCell>
-              <StyledTableCell align="center">{row.reserved}</StyledTableCell>
-              <StyledTableCell align="center">{row.free}</StyledTableCell>
-              <StyledTableCell align="center">{row.reserved}</StyledTableCell>
-              <StyledTableCell align="center">{row.reserved}</StyledTableCell>
-              <StyledTableCell align="center">{row.reserved}</StyledTableCell>
-              <StyledTableCell align="center">{row.reserved}</StyledTableCell>
-              <StyledTableCell align="center">{row.free}</StyledTableCell>
-              <StyledTableCell align="center">{row.reserved}</StyledTableCell>
-              <StyledTableCell align="center">{row.reserved}</StyledTableCell>
-              <StyledTableCell align="center">{row.reserved}</StyledTableCell>
-              <StyledTableCell align="center">{row.free}</StyledTableCell>
-              <StyledTableCell align="center">{row.reserved}</StyledTableCell>
-              <StyledTableCell align="center">{row.reserved}</StyledTableCell>
-              <StyledTableCell align="center">{row.reserved}</StyledTableCell>
-              <StyledTableCell align="center">{row.reserved}</StyledTableCell>
-              <StyledTableCell align="center">{row.reserved}</StyledTableCell>
-            </StyledTableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+    <div className={styles.component}>
+      <TableContainer component={Paper}>
+        <Table className={classes.table} aria-label="customized table">
+          <TableHead>
+            <TableRow>
+              <StyledTableCell>Table</StyledTableCell>
+              <StyledTableCell align="center">9:00</StyledTableCell>
+              <StyledTableCell align="center">9:30</StyledTableCell>
+              <StyledTableCell align="center">10:00</StyledTableCell>
+              <StyledTableCell align="center">10:30</StyledTableCell>
+              <StyledTableCell align="center">11:00</StyledTableCell>
+              <StyledTableCell align="center">11:30</StyledTableCell>
+              <StyledTableCell align="center">12:00</StyledTableCell>
+              <StyledTableCell align="center">12:30</StyledTableCell>
+              <StyledTableCell align="center">13:00</StyledTableCell>
+              <StyledTableCell align="center">13:30</StyledTableCell>
+              <StyledTableCell align="center">14:00</StyledTableCell>
+              <StyledTableCell align="center">14:30</StyledTableCell>
+              <StyledTableCell align="center">15:00</StyledTableCell>
+              <StyledTableCell align="center">15:30</StyledTableCell>
+              <StyledTableCell align="center">16:00</StyledTableCell>
+              <StyledTableCell align="center">16:30</StyledTableCell>
+              <StyledTableCell align="center">17:00</StyledTableCell>
+              <StyledTableCell align="center">17:30</StyledTableCell>
+              <StyledTableCell align="center">18:00</StyledTableCell>
+              <StyledTableCell align="center">18:30</StyledTableCell>
+              <StyledTableCell align="center">19:00</StyledTableCell>
+              <StyledTableCell align="center">19:30</StyledTableCell>
+              <StyledTableCell align="center">20:00</StyledTableCell>
+              <StyledTableCell align="center">20:30</StyledTableCell>
+              <StyledTableCell align="center">21:00</StyledTableCell>
+              <StyledTableCell align="center">21:30</StyledTableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {rows.map(row => (
+              <StyledTableRow key={row.name}>
+                <StyledTableCell
+                  className={styles.tableNr}
+                  component="th"
+                  scope="row"
+                  align="center"
+                >
+                  {row.name}
+                </StyledTableCell>
+                <StyledTableCell align="center">{row.reserved}</StyledTableCell>
+                <StyledTableCell align="center">{row.free}</StyledTableCell>
+                <StyledTableCell align="center">{row.reserved}</StyledTableCell>
+                <StyledTableCell align="center">{row.reserved}</StyledTableCell>
+                <StyledTableCell align="center">{row.reserved}</StyledTableCell>
+                <StyledTableCell align="center">{row.reserved}</StyledTableCell>
+                <StyledTableCell align="center">{row.free}</StyledTableCell>
+                <StyledTableCell align="center">{row.reserved}</StyledTableCell>
+                <StyledTableCell align="center">{row.reserved}</StyledTableCell>
+                <StyledTableCell align="center">{row.reserved}</StyledTableCell>
+                <StyledTableCell align="center">{row.reserved}</StyledTableCell>
+                <StyledTableCell align="center">{row.free}</StyledTableCell>
+                <StyledTableCell align="center">{row.reserved}</StyledTableCell>
+                <StyledTableCell align="center">{row.reserved}</StyledTableCell>
+                <StyledTableCell align="center">{row.reserved}</StyledTableCell>
+                <StyledTableCell align="center">{row.reserved}</StyledTableCell>
+                <StyledTableCell align="center">{row.free}</StyledTableCell>
+                <StyledTableCell align="center">{row.reserved}</StyledTableCell>
+                <StyledTableCell align="center">{row.reserved}</StyledTableCell>
+                <StyledTableCell align="center">{row.reserved}</StyledTableCell>
+                <StyledTableCell align="center">{row.free}</StyledTableCell>
+                <StyledTableCell align="center">{row.reserved}</StyledTableCell>
+                <StyledTableCell align="center">{row.reserved}</StyledTableCell>
+                <StyledTableCell align="center">{row.reserved}</StyledTableCell>
+                <StyledTableCell align="center">{row.reserved}</StyledTableCell>
+                <StyledTableCell align="center">{row.reserved}</StyledTableCell>
+              </StyledTableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </div>
   );
 };
 

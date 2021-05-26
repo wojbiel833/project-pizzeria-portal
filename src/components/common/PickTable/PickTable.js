@@ -6,11 +6,10 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
-// import styles from './PickTable.module.scss';
-
 const useStyles = makeStyles(theme => ({
   formControl: {
     margin: theme.spacing(1),
+    marginTop: 20,
     minWidth: 120,
   },
   selectEmpty: {
@@ -26,10 +25,7 @@ const PickTable = () => {
     setGuestsAmount(event.target.value);
   };
 
-  // this.wrapper = React.createRef();
-
   return (
-    // <div ref={this.wrapper}>
     <form>
       <FormControl className={classes.formControl}>
         <InputLabel shrink id="tableNumber">

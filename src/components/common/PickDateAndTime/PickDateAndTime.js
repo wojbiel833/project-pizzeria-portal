@@ -9,6 +9,7 @@ const useStyles = makeStyles(theme => ({
   container: {
     display: 'flex',
     flexWrap: 'wrap',
+    margin: 20,
   },
   textField: {
     marginLeft: theme.spacing(1),
