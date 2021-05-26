@@ -1,13 +1,24 @@
-import { combineReducers, createStore } from 'redux';
-import initialStoreData from '../data/dataStore';
+import { combineReducers, createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
+
+import tablesReducer from './tablesRedux';
 
 // define initial state and shallow-merge initial data
 const initialState = {
-  orders: initialStoreData.orders,
+  tables: {
+    data: {},
+    loading: {
+      active: false,
+      error: false,
+    },
+  },
 };
 
 // define reducers
-const reducers = {};
+const reducers = {
+  tables: tablesReducer,
+};
 
 // add blank reducers for initial state properties without reducers
 Object.keys(initialState).forEach(item => {
@@ -16,14 +27,13 @@ Object.keys(initialState).forEach(item => {
   }
 });
 
-// merge all reducers
-const storeReducer = combineReducers(reducers);
+const combinedReducers = combineReducers(reducers);
 
 // create store
 const store = createStore(
-  storeReducer,
+  combinedReducers,
   initialState,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  composeWithDevTools(applyMiddleware(thunk))
 );
 
 export default store;

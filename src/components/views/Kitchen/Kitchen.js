@@ -55,10 +55,21 @@ const useStyles = makeStyles({
 const Kitchen = () => {
   const classes = useStyles();
 
-  const [checked, setChecked] = useState(true);
+  const [checked1, setChecked1] = useState(true);
+  const [checked2, setChecked2] = useState(true);
+  const [checked3, setChecked3] = useState(true);
+  const [checked4, setChecked4] = useState(true);
+  const [checked5, setChecked5] = useState(true);
+  const [checked6, setChecked6] = useState(true);
 
   const handleChange = event => {
-    setChecked(event.target.checked);
+    setChecked1(event.target.checked1);
+    setChecked2(event.target.checked2);
+    setChecked3(event.target.checked3);
+    setChecked4(event.target.checked4);
+    setChecked5(event.target.checked5);
+    setChecked5(event.target.checked5);
+    setChecked6(event.target.checked6);
   };
 
   // DATA-------------------------------------------------------------------
@@ -72,7 +83,7 @@ const Kitchen = () => {
       '123',
       'MEAL DESCRIPTION',
       <Checkbox
-        checked={checked}
+        checked={checked1}
         onChange={handleChange}
         inputProps={{ 'aria-label': 'primary checkbox' }}
       />
@@ -82,7 +93,7 @@ const Kitchen = () => {
       '234',
       'MEAL DESCRIPTION',
       <Checkbox
-        checked={checked}
+        checked={checked2}
         onChange={handleChange}
         inputProps={{ 'aria-label': 'primary checkbox' }}
       />
@@ -92,7 +103,7 @@ const Kitchen = () => {
       'ABC245',
       'MEAL DESCRIPTION',
       <Checkbox
-        checked={checked}
+        checked={checked3}
         onChange={handleChange}
         inputProps={{ 'aria-label': 'primary checkbox' }}
       />
@@ -102,7 +113,7 @@ const Kitchen = () => {
       '567',
       'MEAL DESCRIPTION',
       <Checkbox
-        checked={checked}
+        checked={checked4}
         onChange={handleChange}
         inputProps={{ 'aria-label': 'primary checkbox' }}
       />
@@ -112,7 +123,7 @@ const Kitchen = () => {
       'ABC874',
       'MEAL DESCRIPTION',
       <Checkbox
-        checked={checked}
+        checked={checked5}
         onChange={handleChange}
         inputProps={{ 'aria-label': 'primary checkbox' }}
       />
@@ -122,7 +133,7 @@ const Kitchen = () => {
       'ABC234',
       'MEAL DESCRIPTION',
       <Checkbox
-        checked={checked}
+        checked={checked6}
         onChange={handleChange}
         inputProps={{ 'aria-label': 'primary checkbox' }}
       />
