@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
     width: 200,
   },
   FormControlLabel: {
-    marginBottom: '10px',
+    marginBottom: 10,
   },
 }));
 
@@ -35,7 +35,11 @@ const PickDateAndTime = () => {
   return (
     <div className={styles.flex}>
       <form className={classes.container} noValidate>
-        {/* <FormControlLabel className={classes.textField}> */}
+        {/* <FormControlLabel
+          control="Switch"
+          disabled="false"
+          className={classes.textField}
+        > */}
         <TextField
           id="datetime-local"
           label="Date and time (from, each 30min)"

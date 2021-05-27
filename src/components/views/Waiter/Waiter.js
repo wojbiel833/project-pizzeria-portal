@@ -19,7 +19,7 @@ class Waiter extends React.Component {
       active: PropTypes.bool,
       error: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
     }),
-    tables: PropTypes.string,
+    tables: PropTypes.object,
   };
 
   componentDidMount() {

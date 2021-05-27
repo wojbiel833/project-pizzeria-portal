@@ -55,22 +55,12 @@ const useStyles = makeStyles({
 const Kitchen = () => {
   const classes = useStyles();
 
-  const [checked1, setChecked1] = useState(true);
+  const [checked1, setChecked1] = useState(false);
   const [checked2, setChecked2] = useState(true);
-  const [checked3, setChecked3] = useState(true);
+  const [checked3, setChecked3] = useState(false);
   const [checked4, setChecked4] = useState(true);
   const [checked5, setChecked5] = useState(true);
-  const [checked6, setChecked6] = useState(true);
-
-  const handleChange = event => {
-    setChecked1(event.target.checked1);
-    setChecked2(event.target.checked2);
-    setChecked3(event.target.checked3);
-    setChecked4(event.target.checked4);
-    setChecked5(event.target.checked5);
-    setChecked5(event.target.checked5);
-    setChecked6(event.target.checked6);
-  };
+  const [checked6, setChecked6] = useState(false);
 
   // DATA-------------------------------------------------------------------
   function createData(tableNr, orderNr, order, done) {
@@ -84,8 +74,9 @@ const Kitchen = () => {
       'MEAL DESCRIPTION',
       <Checkbox
         checked={checked1}
-        onChange={handleChange}
+        onChange={e => setChecked1(e.target.checked)}
         inputProps={{ 'aria-label': 'primary checkbox' }}
+        className={checked1 ? styles.active : ''}
       />
     ),
     createData(
@@ -94,8 +85,9 @@ const Kitchen = () => {
       'MEAL DESCRIPTION',
       <Checkbox
         checked={checked2}
-        onChange={handleChange}
+        onChange={e => setChecked2(e.target.checked)}
         inputProps={{ 'aria-label': 'primary checkbox' }}
+        className={checked2 ? styles.active : ''}
       />
     ),
     createData(
@@ -104,8 +96,9 @@ const Kitchen = () => {
       'MEAL DESCRIPTION',
       <Checkbox
         checked={checked3}
-        onChange={handleChange}
+        onChange={e => setChecked3(e.target.checked)}
         inputProps={{ 'aria-label': 'primary checkbox' }}
+        className={checked3 ? styles.active : ''}
       />
     ),
     createData(
@@ -114,8 +107,9 @@ const Kitchen = () => {
       'MEAL DESCRIPTION',
       <Checkbox
         checked={checked4}
-        onChange={handleChange}
+        onChange={e => setChecked4(e.target.checked)}
         inputProps={{ 'aria-label': 'primary checkbox' }}
+        className={checked4 ? styles.active : ''}
       />
     ),
     createData(
@@ -124,8 +118,9 @@ const Kitchen = () => {
       'MEAL DESCRIPTION',
       <Checkbox
         checked={checked5}
-        onChange={handleChange}
+        onChange={e => setChecked5(e.target.checked)}
         inputProps={{ 'aria-label': 'primary checkbox' }}
+        className={checked5 ? styles.active : ''}
       />
     ),
     createData(
@@ -134,8 +129,9 @@ const Kitchen = () => {
       'MEAL DESCRIPTION',
       <Checkbox
         checked={checked6}
-        onChange={handleChange}
+        onChange={e => setChecked6(e.target.checked)}
         inputProps={{ 'aria-label': 'primary checkbox' }}
+        className={checked6 ? styles.active : ''}
       />
     ),
   ];
