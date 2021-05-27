@@ -15,22 +15,28 @@ import styles from './Waiter.module.scss';
 class Waiter extends React.Component {
   static propTypes = {
     fetchTables: PropTypes.func,
+    fetchStatus: PropTypes.func,
     loading: PropTypes.shape({
       active: PropTypes.bool,
       error: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
     }),
     tables: PropTypes.object,
+    id: PropTypes.string,
   };
 
   componentDidMount() {
-    const { fetchTables } = this.props;
+    const { fetchTables, fetchStatus } = this.props;
     fetchTables();
+    fetchStatus();
   }
 
   render() {
+    // w komponencie Waiter, propsa odpowiedniego guzika, który wywoła funkcję wspomnianą w poprzednim punkcie, przekazując jej id stolika oraz nowy status.
     const {
       loading: { active, error },
       tables,
+      id,
+      fetchStatus,
     } = this.props;
 
     const renderActions = status => {
@@ -38,7 +44,9 @@ class Waiter extends React.Component {
         case 'free':
           return (
             <>
-              <Button className={styles.link}>thinking</Button>
+              <Button onClick={fetchStatus(id, status)} className={styles.link}>
+                thinking
+              </Button>
               <Button className={styles.link}>new order</Button>
             </>
           );
