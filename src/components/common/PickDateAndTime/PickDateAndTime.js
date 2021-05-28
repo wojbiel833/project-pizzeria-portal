@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-// import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 import styles from './PickDateAndTime.module.scss';
 
@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
     width: 200,
   },
   FormControlLabel: {
-    marginBottom: 10,
+    margin: 10,
   },
 }));
 
@@ -35,22 +35,21 @@ const PickDateAndTime = () => {
   return (
     <div className={styles.flex}>
       <form className={classes.container} noValidate>
-        {/* <FormControlLabel
-          control="Switch"
-          disabled="false"
+        <FormControlLabel
           className={classes.textField}
-        > */}
-        <TextField
-          id="datetime-local"
-          label="Date and time (from, each 30min)"
-          type="datetime-local"
-          defaultValue="2021-05-23T10:30"
-          className={classes.textField}
-          InputLabelProps={{
-            shrink: true,
-          }}
+          control={
+            <TextField
+              id="datetime-local"
+              type="datetime-local"
+              defaultValue="2021-05-23T10:30"
+              className={classes.textField}
+              InputLabelProps={{
+                shrink: true,
+              }}
+              label="Date and time (from, each 30min)"
+            />
+          }
         />
-        {/* </FormControlLabel> */}
       </form>
 
       <form className={classes.container} noValidate>

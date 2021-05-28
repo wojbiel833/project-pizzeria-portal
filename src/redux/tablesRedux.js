@@ -3,7 +3,7 @@ import { api } from '../components/settings';
 /* selectors */
 export const getAll = ({ tables }) => tables.data;
 export const getLoadingState = ({ tables }) => tables.loading;
-// export const getTableStatus = ({ tables }) => tables.status;
+export const getTableStatus = ({ tables }) => tables.status;
 
 /* action name creator */
 const reducerName = 'tables';
@@ -44,7 +44,7 @@ export const fetchStatusFromAPI = () => {
 
     Axios.get(`${api.url}/api/${api.tables}`)
       .then(res => {
-        dispatch(fetchStatus(res.tables.status));
+        dispatch(fetchStatus(res.status));
       })
       .catch(err => {
         dispatch(fetchError(err.message || true));

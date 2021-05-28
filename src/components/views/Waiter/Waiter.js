@@ -20,14 +20,13 @@ class Waiter extends React.Component {
       active: PropTypes.bool,
       error: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
     }),
-    tables: PropTypes.object,
+    tables: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
     id: PropTypes.string,
   };
 
   componentDidMount() {
-    const { fetchTables, fetchStatus } = this.props;
+    const { fetchTables } = this.props;
     fetchTables();
-    fetchStatus();
   }
 
   render() {
@@ -44,7 +43,11 @@ class Waiter extends React.Component {
         case 'free':
           return (
             <>
-              <Button onClick={fetchStatus(id, status)} className={styles.link}>
+              <Button
+                onClick={() => fetchStatus(id, status)}
+                className={styles.link}
+              >
+                {/* <Button onClick={fetchStatus(id, status)} className={styles.link}> */}
                 thinking
               </Button>
               <Button className={styles.link}>new order</Button>
@@ -79,44 +82,46 @@ class Waiter extends React.Component {
         </Paper>
       );
     } else {
-      <div className={styles.component}>
-        <WaiterButtons />
-        <div className={styles.table}>
-          <Paper className={styles.component}>
-            <Table>
-              <TableHead>
-                <TableRow>
-                  <TableCell>Table</TableCell>
-                  <TableCell>Status</TableCell>
-                  <TableCell>Order</TableCell>
-                  <TableCell>Action</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {tables.map(row => (
-                  <TableRow key={row.id}>
-                    <TableCell component="th" scope="row">
-                      {row.id}
-                    </TableCell>
-                    <TableCell>{row.status}</TableCell>
-                    <TableCell>
-                      {row.order && (
-                        <Button
-                          to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}
-                          className={styles.link}
-                        >
-                          {row.order}
-                        </Button>
-                      )}
-                    </TableCell>
-                    <TableCell>{renderActions(row.status)}</TableCell>
+      return (
+        <div className={styles.component}>
+          <WaiterButtons />
+          <div className={styles.table}>
+            <Paper className={styles.component}>
+              <Table>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Table</TableCell>
+                    <TableCell>Status</TableCell>
+                    <TableCell>Order</TableCell>
+                    <TableCell>Action</TableCell>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </Paper>
+                </TableHead>
+                <TableBody>
+                  {tables.map(row => (
+                    <TableRow key={row.id}>
+                      <TableCell component="th" scope="row">
+                        {row.id}
+                      </TableCell>
+                      <TableCell>{row.status}</TableCell>
+                      <TableCell>
+                        {row.order && (
+                          <Button
+                            to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}
+                            className={styles.link}
+                          >
+                            {row.order}
+                          </Button>
+                        )}
+                      </TableCell>
+                      <TableCell>{renderActions(row.status)}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </Paper>
+          </div>
         </div>
-      </div>;
+      );
     }
   }
 }
