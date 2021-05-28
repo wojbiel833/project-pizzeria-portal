@@ -3,7 +3,7 @@ import { api } from '../components/settings';
 /* selectors */
 export const getAll = ({ tables }) => tables.data;
 export const getLoadingState = ({ tables }) => tables.loading;
-export const getTableStatus = ({ tables }) => tables.status;
+export const getTableId = ({ tables }) => tables.data.id;
 
 /* action name creator */
 const reducerName = 'tables';

@@ -37,32 +37,92 @@ class Waiter extends React.Component {
       id,
       fetchStatus,
     } = this.props;
-
+    console.log(tables, id);
     const renderActions = status => {
       switch (status) {
         case 'free':
           return (
             <>
               <Button
-                onClick={() => fetchStatus(id, status)}
+                onClick={() => {
+                  fetchStatus(id, status);
+                  console.log(id, status);
+                }}
                 className={styles.link}
               >
-                {/* <Button onClick={fetchStatus(id, status)} className={styles.link}> */}
                 thinking
               </Button>
-              <Button className={styles.link}>new order</Button>
+              <Button
+                onClick={() => {
+                  fetchStatus(id, status);
+                  console.log(id, status);
+                }}
+                className={styles.link}
+              >
+                new order
+              </Button>
             </>
           );
         case 'thinking':
-          return <Button className={styles.link}>new order</Button>;
+          return (
+            <Button
+              onClick={() => {
+                fetchStatus(id, status);
+                console.log(id, status);
+              }}
+              className={styles.link}
+            >
+              new order
+            </Button>
+          );
         case 'ordered':
-          return <Button className={styles.link}>prepared</Button>;
+          return (
+            <Button
+              onClick={() => {
+                fetchStatus(id, status);
+                console.log(id, status);
+              }}
+              className={styles.link}
+            >
+              prepared
+            </Button>
+          );
         case 'prepared':
-          return <Button className={styles.link}>delivered</Button>;
+          return (
+            <Button
+              onClick={() => {
+                fetchStatus(id, status);
+                console.log(id, status);
+              }}
+              className={styles.link}
+            >
+              delivered
+            </Button>
+          );
         case 'delivered':
-          return <Button className={styles.link}>paid</Button>;
+          return (
+            <Button
+              onClick={() => {
+                fetchStatus(id, status);
+                console.log(id, status);
+              }}
+              className={styles.link}
+            >
+              paid
+            </Button>
+          );
         case 'paid':
-          return <Button className={styles.link}>free</Button>;
+          return (
+            <Button
+              onClick={() => {
+                fetchStatus(id, status);
+                console.log(id, status);
+              }}
+              className={styles.link}
+            >
+              free
+            </Button>
+          );
         default:
           return null;
       }

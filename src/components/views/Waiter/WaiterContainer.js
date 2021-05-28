@@ -4,14 +4,14 @@ import {
   getAll,
   fetchFromAPI,
   getLoadingState,
-  getTableStatus,
+  getTableId,
   fetchStatusFromAPI,
 } from '../../../redux/tablesRedux';
 
 const mapStateToProps = state => ({
   tables: getAll(state),
   loading: getLoadingState(state),
-  status: getTableStatus(state),
+  id: getTableId(state),
 });
 // w kontenerze komponentu Waiter, nowe powiązanie stanu z propsem, wykorzystujące stworzony thunk,
 
