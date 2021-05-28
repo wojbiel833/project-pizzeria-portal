@@ -270,5 +270,32 @@
     { "id": "4", "status": "prepared", "order": 234 },
     { "id": "5", "status": "delivered", "order": 345 },
     { "id": "6", "status": "paid", "order": 456 }
+  ],
+  "reservations": [
+    { "id": "1", "status": "free", "reservationType": "" },
+    { "id": "2", "status": "reserved", "reservationType": "single" },
+    { "id": "3", "status": "reserved", "reservationType": "cyclicalEvent" },
+    { "id": "4", "status": "reserved", "reservationType": "disposableEvent" },
+    { "id": "5", "status": "free", "reservationType": "" },
+    { "id": "6", "status": "reserved", "reservationType": "single" },
+    { "id": "7", "status": "free", "reservationType": "" },
+    { "id": "8", "status": "reserved", "reservationType": "cyclicalEvent" },
+    { "id": "9", "status": "free", "reservationType": "" },
+    { "id": "10", "status": "reserved", "reservationType": "disposableEvent" },
+    { "id": "11", "status": "reserved", "reservationType": "disposableEvent" },
+    { "id": "12", "status": "free", "reservationType": "" },
+    { "id": "13", "status": "free", "reservationType": "" },
+    { "id": "14", "status": "reserved", "reservationType": "single" },
+    { "id": "15", "status": "reserved", "reservationType": "single" },
+    { "id": "16", "status": "reserved", "reservationType": "single" },
+    { "id": "17", "status": "reserved", "reservationType": "cyclicalEvent" },
+    { "id": "18", "status": "reserved", "reservationType": "disposableEvent" },
+    { "id": "19", "status": "reserved", "reservationType": "disposableEvent" },
+    { "id": "20", "status": "free", "reservationType": "" },
+    { "id": "21", "status": "free", "reservationType": "" },
+    { "id": "22", "status": "free", "reservationType": "" },
+    { "id": "23", "status": "free", "reservationType": "" },
+    { "id": "24", "status": "reserved", "reservationType": "single" },
+    { "id": "25", "status": "reserved", "reservationType": "single" }
   ]
 }
