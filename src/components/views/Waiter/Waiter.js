@@ -34,11 +34,10 @@ class Waiter extends React.Component {
     const {
       loading: { active, error },
       tables,
-      id,
       fetchStatus,
     } = this.props;
-    console.log(tables, id);
-    const renderActions = status => {
+
+    const renderActions = (status, id) => {
       switch (status) {
         case 'free':
           return (
@@ -173,7 +172,7 @@ class Waiter extends React.Component {
                           </Button>
                         )}
                       </TableCell>
-                      <TableCell>{renderActions(row.status)}</TableCell>
+                      <TableCell>{renderActions(row.status, row.id)}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>

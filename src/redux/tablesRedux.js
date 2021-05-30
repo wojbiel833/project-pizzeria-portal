@@ -3,7 +3,6 @@ import { api } from '../components/settings';
 /* selectors */
 export const getAll = ({ tables }) => tables.data;
 export const getLoadingState = ({ tables }) => tables.loading;
-export const getTableId = ({ tables }) => tables.data.id;
 
 /* action name creator */
 const reducerName = 'tables';
@@ -38,13 +37,13 @@ export const fetchFromAPI = () => {
   };
 };
 // nowy thunk, który zapisze odpowiednie zmiany w API, a po otrzymaniu odpowiedzi zaktualizuje stan aplikacji,
-export const fetchStatusFromAPI = () => {
+export const fetchStatusFromAPI = ({ id, status }) => {
   return (dispatch, getState) => {
     dispatch(fetchStarted());
 
-    Axios.get(`${api.url}/api/${api.tables}`)
+    Axios.patch(`${api.url}/api/${api.tables}/${id}`, { status })
       .then(res => {
-        dispatch(fetchStatus(res.status));
+        dispatch(fetchStatus({ id, status }));
       })
       .catch(err => {
         dispatch(fetchError(err.message || true));
