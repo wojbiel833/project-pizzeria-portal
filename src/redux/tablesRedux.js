@@ -84,14 +84,25 @@ export default function reducer(statePart = [], action = {}) {
       };
     }
     case FETCH_STATUS: {
-      return {
-        ...statePart,
-        loading: {
-          active: false,
-          error: false,
-        },
-        status: action.payload,
-      };
+      if (action.payload.id) {
+        return {
+          ...statePart,
+          loading: {
+            active: false,
+            error: false,
+          },
+          data: [action.payload, ...statePart.data],
+        };
+      } else {
+        return {
+          ...statePart,
+          loading: {
+            active: false,
+            error: false,
+          },
+          data: [...statePart.data],
+        };
+      }
     }
     default:
       return statePart;
