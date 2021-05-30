@@ -14,7 +14,7 @@ const initialState = {
     },
     status: {},
   },
-  reservations: [],
+  booking: [],
 };
 
 // define reducers

@@ -7,9 +7,8 @@ import Login from './components/views/Login/Login';
 import Booking from './components/views/Booking/Booking';
 import BookTable from './components/views/BookTable/BookTable';
 import EditTable from './components/views/EditTable/EditTable';
-import BookEvent from './components/views/BookEvent/BookEvent';
 import Waiter from './components/views/Waiter/WaiterContainer';
-import EditOrder from './components/views/EditOrder/EditOrder';
+import AddNewTable from './components/views/AddNewTable/AddNewTable.js';
 import Kitchen from './components/views/Kitchen/Kitchen';
 
 import { StylesProvider } from '@material-ui/core/styles';
@@ -62,7 +61,7 @@ const App = () => {
               <Route
                 exact
                 path={process.env.PUBLIC_URL + '/tables/event/new'}
-                component={BookEvent}
+                component={BookTable}
               />
               <Route
                 exact
@@ -71,8 +70,13 @@ const App = () => {
               />
               <Route
                 exact
+                path={process.env.PUBLIC_URL + '/waiter/orders/new'}
+                component={AddNewTable}
+              />
+              <Route
+                exact
                 path={process.env.PUBLIC_URL + '/waiter/orders/:id'}
-                component={EditOrder}
+                component={EditTable}
               />
               <Route
                 exact
