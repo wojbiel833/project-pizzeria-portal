@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import tablesReducer from './tablesRedux';
+import reservationsReducer from './reservationsRedux';
 
 // define initial state and shallow-merge initial data
 const initialState = {
@@ -14,12 +15,13 @@ const initialState = {
     },
     status: {},
   },
-  booking: [],
+  reservations: [],
 };
 
 // define reducers
 const reducers = {
   tables: tablesReducer,
+  reservations: reservationsReducer,
 };
 
 // add blank reducers for initial state properties without reducers

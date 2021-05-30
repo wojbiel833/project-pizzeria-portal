@@ -1,5 +1,5 @@
 import React from 'react';
-import AddBooking from '../../features/AddBooking/AddBooking';
+import AddBooking from '../../features/AddBooking/AddBookingContainer';
 import BookingButtons from '../../common/BookingButtons/BookingButtons';
 import SubpageTitle from '../../common/SubpageTitle/SubpageTitle';
 import styles from './AddNewTable.module.scss';

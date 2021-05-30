@@ -8,6 +8,7 @@ export const api = {
   products: 'products',
   order: 'order',
   booking: 'booking',
+  reservations: 'reservations',
   event: 'event',
   dateStartParamKey: 'date_gte',
   dateEndParamKey: 'date_lte',
