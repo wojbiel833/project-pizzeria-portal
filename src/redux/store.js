@@ -8,14 +8,19 @@ import reservationsReducer from './reservationsRedux';
 // define initial state and shallow-merge initial data
 const initialState = {
   tables: {
-    data: {},
+    data: [],
     loading: {
       active: false,
       error: false,
     },
-    status: {},
   },
-  reservations: [],
+  reservations: {
+    data: [],
+    loading: {
+      active: false,
+      error: false,
+    },
+  },
 };
 
 // define reducers

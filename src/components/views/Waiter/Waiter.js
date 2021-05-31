@@ -44,7 +44,7 @@ class Waiter extends React.Component {
             <>
               <Button
                 onClick={() => {
-                  fetchStatus(id, status);
+                  fetchStatus(id, 'thinking');
                   console.log(id, status);
                 }}
                 className={styles.link}
@@ -53,7 +53,7 @@ class Waiter extends React.Component {
               </Button>
               <Button
                 onClick={() => {
-                  fetchStatus(id, status);
+                  fetchStatus(id, 'new order');
                   console.log(id, status);
                 }}
                 className={styles.link}
@@ -66,7 +66,7 @@ class Waiter extends React.Component {
           return (
             <Button
               onClick={() => {
-                fetchStatus(id, status);
+                fetchStatus(id, 'new order');
                 console.log(id, status);
               }}
               className={styles.link}
@@ -78,7 +78,7 @@ class Waiter extends React.Component {
           return (
             <Button
               onClick={() => {
-                fetchStatus(id, status);
+                fetchStatus(id, 'prepared');
                 console.log(id, status);
               }}
               className={styles.link}
@@ -90,7 +90,7 @@ class Waiter extends React.Component {
           return (
             <Button
               onClick={() => {
-                fetchStatus(id, status);
+                fetchStatus(id, 'delivered');
                 console.log(id, status);
               }}
               className={styles.link}
@@ -102,7 +102,7 @@ class Waiter extends React.Component {
           return (
             <Button
               onClick={() => {
-                fetchStatus(id, status);
+                fetchStatus(id, 'paid');
                 console.log(id, status);
               }}
               className={styles.link}
@@ -114,12 +114,24 @@ class Waiter extends React.Component {
           return (
             <Button
               onClick={() => {
-                fetchStatus(id, status);
+                fetchStatus(id, 'free');
                 console.log(id, status);
               }}
               className={styles.link}
             >
               free
+            </Button>
+          );
+        case 'new order':
+          return (
+            <Button
+              onClick={() => {
+                fetchStatus(id, 'prepared');
+                console.log(id, status);
+              }}
+              className={styles.link}
+            >
+              prepared
             </Button>
           );
         default:

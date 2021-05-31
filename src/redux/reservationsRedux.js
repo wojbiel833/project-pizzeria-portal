@@ -3,7 +3,7 @@ import { api } from '../components/settings';
 
 /* selectors */
 // export const getAll = ({ tables }) => tables.data;
-export const getAll = ({ reservations }) => reservations;
+export const getAll = ({ reservations }) => reservations.data;
 export const getLoadingState = ({ tables }) => tables.loading;
 
 /* action name creator */
@@ -25,9 +25,9 @@ export const fetchReservationsFromAPI = () => {
   return (dispatch, getState) => {
     dispatch(fetchStarted());
 
-    Axios.get(`${api.url}/api/${api.resevrations}`)
+    Axios.get(`${api.url}/api/${api.reservations}`)
       .then(res => {
-        dispatch(fetchSuccess(res));
+        dispatch(fetchSuccess(res.data));
       })
       .catch(err => {
         dispatch(fetchError(err.message || true));

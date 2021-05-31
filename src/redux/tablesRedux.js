@@ -39,16 +39,10 @@ export const fetchFromAPI = () => {
 };
 // nowy thunk, który zapisze odpowiednie zmiany w API, a po otrzymaniu odpowiedzi zaktualizuje stan aplikacji,
 export const fetchStatusFromAPI = ({ id, status }) => {
-  return (dispatch, getState) => {
-    dispatch(fetchStarted());
-
-    Axios.patch(`${api.url}/api/${api.tables}/${id}`, { status })
-      .then(res => {
-        dispatch(fetchStatus({ id, status }));
-      })
-      .catch(err => {
-        dispatch(fetchError(err.message || true));
-      });
+  return dispatch => {
+    Axios.patch(`${api.url}/api/${api.tables}/${id}`, { status }).then(res => {
+      dispatch(fetchStatus({ id, status }));
+    });
   };
 };
 
@@ -84,25 +78,14 @@ export default function reducer(statePart = [], action = {}) {
       };
     }
     case FETCH_STATUS: {
-      if (action.payload.id) {
-        return {
-          ...statePart,
-          loading: {
-            active: false,
-            error: false,
-          },
-          data: [action.payload, ...statePart.data],
-        };
-      } else {
-        return {
-          ...statePart,
-          loading: {
-            active: false,
-            error: false,
-          },
-          data: [...statePart.data],
-        };
-      }
+      return {
+        ...statePart,
+        data: statePart.data.map(table =>
+          table.id === action.payload.id
+            ? { ...table, status: action.payload.status }
+            : table
+        ),
+      };
     }
     default:
       return statePart;
