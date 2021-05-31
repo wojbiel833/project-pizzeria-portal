@@ -3,8 +3,8 @@ import { api } from '../components/settings';
 
 /* selectors */
 // export const getAll = ({ tables }) => tables.data;
-export const getAll = ({ resevations }) => resevations.data;
-// export const getLoadingState = ({ tables }) => tables.loading;
+export const getAll = ({ reservations }) => reservations;
+export const getLoadingState = ({ tables }) => tables.loading;
 
 /* action name creator */
 const reducerName = 'reservations';
@@ -21,13 +21,13 @@ export const fetchSuccess = payload => ({ payload, type: FETCH_SUCCESS });
 export const fetchError = payload => ({ payload, type: FETCH_ERROR });
 
 /* thunk creators */
-export const fetchFromAPI = () => {
+export const fetchReservationsFromAPI = () => {
   return (dispatch, getState) => {
     dispatch(fetchStarted());
 
     Axios.get(`${api.url}/api/${api.resevrations}`)
       .then(res => {
-        dispatch(fetchSuccess(res.data));
+        dispatch(fetchSuccess(res));
       })
       .catch(err => {
         dispatch(fetchError(err.message || true));

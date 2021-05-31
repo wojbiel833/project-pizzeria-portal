@@ -1,20 +1,20 @@
 import { connect } from 'react-redux';
 import AddBooking from './AddBooking';
 import {
-  // getAll,
-  fetchFromAPI,
-  // getLoadingState,
+  getAll,
+  fetchReservationsFromAPI,
+  getLoadingState,
   // fetchStatusFromAPI,
-} from '../../../redux/tablesRedux';
+} from '../../../redux/reservationsRedux';
 
 const mapStateToProps = state => ({
-  // tables: getAll(state),
-  // loading: getLoadingState(state),
+  reservations: getAll(state),
+  loading: getLoadingState(state),
 });
 // w kontenerze komponentu Waiter, nowe powiązanie stanu z propsem, wykorzystujące stworzony thunk,
 
 const mapDispatchToProps = dispatch => ({
-  fetchReservations: () => dispatch(fetchFromAPI()),
+  fetchReservations: () => dispatch(fetchReservationsFromAPI()),
   // fetchStatus: (id, status) => dispatch(fetchStatusFromAPI({ id, status })),
 });
 
